@@ -31,7 +31,7 @@ public class Material_List_Adapter extends RecyclerView.Adapter<Material_List_Ad
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txt1;
+        public TextView txt1,txt_chalan_no;
         CardView cardeview;
         int pos;
 
@@ -39,7 +39,8 @@ public class Material_List_Adapter extends RecyclerView.Adapter<Material_List_Ad
             super(view);
             viewlike = view;
 
-            txt1 = (TextView) viewlike.findViewById(R.id.tv_level);
+            txt1 = (TextView) viewlike.findViewById(R.id.txt_date);
+            txt_chalan_no = (TextView) viewlike.findViewById(R.id.txt_chalan_no);
 //
 //            cardeview = (CardView)viewlike.findViewById(R.id.cardeview);
 
@@ -68,7 +69,8 @@ public class Material_List_Adapter extends RecyclerView.Adapter<Material_List_Ad
 
         // Toast.makeText(context, "pos "+position, Toast.LENGTH_SHORT).show();
 
-            viewHolder.txt1.setText(bricksListModel.getChalanNo());
+            viewHolder.txt1.setText(bricksListModel.getDate());
+            viewHolder.txt_chalan_no.setText(bricksListModel.getChalanNo());
 
 
 //        viewHolder.cardeview.setTag(viewHolder);
