@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ics.raghav.verticalhomes">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@drawable/logo"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SiteSupervisior_Dashboard.Electric_finish_Activity"></activity>
+        <activity android:name=".SiteSupervisior_Dashboard.Electric_raw_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Gitty_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Mix_sundry_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Successful_form_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Reti_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Sariya_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Sanitary_finished_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Sanitary_raw" />
+        <activity android:name=".SiteSupervisior_Dashboard.Cement_Material_Activity" />
+        <activity android:name=".SiteSupervisior_Dashboard.Bricks_Material_Activity" />
+        <activity android:name=".LoginAndReg.Registration_Pending_Activity" />
+        <activity
+            android:name=".SiteSupervisior_Dashboard.Site_Supervisor_Dashboard"
+            android:label="@string/title_activity_site__supervisor__dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoginAndReg.Otp_Activity" />
+        <activity android:name=".LoginAndReg.Registration_Activity" />
+        <activity android:name=".LoginAndReg.Login_Activity" />
+        <activity android:name=".Splash_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>
