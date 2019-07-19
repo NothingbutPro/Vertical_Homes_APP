@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobile no."
+                android:text="Mobile no./Email id"
                 android:textSize="13dp" />
 
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:imeOptions="actionNext"
-                android:inputType="number"
+                android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@android:color/black"
                 />

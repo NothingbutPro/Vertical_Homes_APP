@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SiteSupervisior_Dashboard.Site_Supervisor_Dashboard"
-    tools:showIn="@layout/app_bar_site__supervisor__dashboard">
+    tools:context=".Accountant_dashboard">
 
 
     <TextView
@@ -17,9 +15,10 @@
         android:layout_marginTop="295dp"
         android:layout_marginEnd="189dp"
         android:layout_marginBottom="361dp"
-        android:text="Welcome to Site Supervisior"
+        android:text="Welcome to Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

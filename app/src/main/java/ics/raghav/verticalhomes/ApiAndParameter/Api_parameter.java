@@ -1,6 +1,7 @@
 package ics.raghav.verticalhomes.ApiAndParameter;
 
 import ics.raghav.verticalhomes.All_Model_Classes.Bricks_Form_Responce;
+import ics.raghav.verticalhomes.All_Model_Classes.Bricks_List_Model;
 import ics.raghav.verticalhomes.All_Model_Classes.Destination_Model;
 import ics.raghav.verticalhomes.All_Model_Classes.Login_Responce;
 import ics.raghav.verticalhomes.All_Model_Classes.Otp_only;
@@ -261,4 +262,7 @@ public interface Api_parameter {
             @Field("item") String item
 
     );
+
+    @GET(BaseUrl.sit_supervisor_bricks_list)
+    Call<Bricks_List_Model> Get_Bricks_List_Call();
 }

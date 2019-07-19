@@ -1,4 +1,4 @@
-package ics.raghav.verticalhomes.SiteSupervisior_Dashboard;
+package ics.raghav.verticalhomes.Super_Admin_Dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,21 +16,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import ics.raghav.verticalhomes.R;
-import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Navigation_Menu_option.Material_Forms_Activity;
-import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Navigation_Menu_option.Update_Forms_Activity;
 
-public class Site_Supervisor_Dashboard extends AppCompatActivity
+public class Super_Admin_HomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_site__supervisor__dashboard);
+        setContentView(R.layout.activity_super__admin__home_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Vertical Homes");
+        toolbar.setTitle("Vertical Homes Admin");
         setSupportActionBar(toolbar);
 
+
+        //**************************************************************************************************
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +61,7 @@ public class Site_Supervisor_Dashboard extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.site__supervisor__dashboard, menu);
+        getMenuInflater().inflate(R.menu.super__admin__home_page, menu);
         return true;
     }
 
@@ -88,16 +88,13 @@ public class Site_Supervisor_Dashboard extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_forms) {
+        } else if (id == R.id.nav_pending) {
 
-            Intent intent=new Intent(Site_Supervisor_Dashboard.this, Material_Forms_Activity.class);
+            Intent intent=new Intent(Super_Admin_HomePage.this,Pending_Forms_Activity.class);
             startActivity(intent);
            // finish();
 
-        } else if (id == R.id.nav_update_form) {
-            Intent intent=new Intent(Site_Supervisor_Dashboard.this, Update_Forms_Activity.class);
-            startActivity(intent);
-            //finish();
+        } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
 

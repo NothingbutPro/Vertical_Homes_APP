@@ -1,4 +1,4 @@
-package ics.raghav.verticalhomes.SiteSupervisior_Dashboard;
+package ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Material_Forms;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import ics.raghav.verticalhomes.All_Model_Classes.Bricks_Form_Responce;
 import ics.raghav.verticalhomes.ApiAndParameter.Api_parameter;
 import ics.raghav.verticalhomes.ApiAndParameter.BaseUrl;
 import ics.raghav.verticalhomes.R;
+import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Successful_form_Activity;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static ics.raghav.verticalhomes.LoginAndReg.Login_Activity.user_id;
 
-public class Mix_sundry_Activity extends AppCompatActivity {
+public class Sariya_Activity extends AppCompatActivity {
 
     EditText date,inward_time,outward_time,lorry_no,chalan_no,party_name,quantity,amount,rate,gst,gross_amount,
             reamark,attachment,item;
@@ -36,7 +37,6 @@ public class Mix_sundry_Activity extends AppCompatActivity {
             Reamark,Attachment,Item;
     ProgressDialog progressDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,8 @@ public class Mix_sundry_Activity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Mix Sundry");
+        getSupportActionBar().setTitle("Sariya");
+
 
         date=findViewById(R.id.date);
         inward_time=findViewById(R.id.inward_time);
@@ -82,18 +83,20 @@ public class Mix_sundry_Activity extends AppCompatActivity {
                 Item=item.getText().toString();
 
 
-                Mix_Sundry_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
+                Sariya_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
                         Gst,Gross_amount,Reamark,Attachment,Item);
 
 
             }
         });
+
+
     }
 
-    private void Mix_Sundry_Form_Submit(String user_id, String date, String inward_time, String outward_time,
-                                        String lorry_no, String chalan_no, String party_name, String quantity,
-                                        String amount, String rate, String gst, String gross_amount, String reamark,
-                                        String attachment, String item) {
+    private void Sariya_Form_Submit(String user_id, String date, String inward_time, String outward_time,
+                                    String lorry_no, String chalan_no, String party_name, String quantity,
+                                    String amount, String rate, String gst, String gross_amount, String reamark,
+                                    String attachment, String item) {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Your Data");
@@ -108,7 +111,7 @@ public class Mix_sundry_Activity extends AppCompatActivity {
                 .build();
         Api_parameter LoginApi = RetroLogin.create(Api_parameter.class);
 
-        Call<Bricks_Form_Responce> login_Call = LoginApi.Mix_Sundry_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
+        Call<Bricks_Form_Responce> login_Call = LoginApi.Sariya_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
                 ,quantity,amount,rate,gst,gross_amount,reamark,attachment,item);
 
 
@@ -119,9 +122,9 @@ public class Mix_sundry_Activity extends AppCompatActivity {
 
                 Log.e("Add_new_service" , ""+response.body().getResponse());
                 Log.e("Add_new_service" , ""+response.body().getMsg());
-                Toast.makeText(Mix_sundry_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Sariya_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Mix_sundry_Activity.this, Successful_form_Activity.class);
+                Intent intent=new Intent(Sariya_Activity.this, Successful_form_Activity.class);
                 startActivity(intent);
                 finish();
 
@@ -148,7 +151,6 @@ public class Mix_sundry_Activity extends AppCompatActivity {
 //                Toast.makeText(Registration_Step_1.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 }

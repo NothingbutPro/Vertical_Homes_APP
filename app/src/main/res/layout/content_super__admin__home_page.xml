@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SiteSupervisior_Dashboard.Site_Supervisor_Dashboard"
-    tools:showIn="@layout/app_bar_site__supervisor__dashboard">
+    tools:context=".Super_Admin_Dashboard.Super_Admin_HomePage"
+    tools:showIn="@layout/app_bar_super__admin__home_page">
 
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginTop="295dp"
         android:layout_marginEnd="189dp"
         android:layout_marginBottom="361dp"
-        android:text="Welcome to Site Supervisior"
+        android:text="Welcome to Super Admin Dashboard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

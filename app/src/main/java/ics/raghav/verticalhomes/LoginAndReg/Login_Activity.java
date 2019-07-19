@@ -13,11 +13,16 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
+import ics.raghav.verticalhomes.Accountant_dashboard;
 import ics.raghav.verticalhomes.All_Model_Classes.Login_Responce;
 import ics.raghav.verticalhomes.ApiAndParameter.Api_parameter;
 import ics.raghav.verticalhomes.ApiAndParameter.BaseUrl;
+import ics.raghav.verticalhomes.Book_Payment_Dashboard;
+import ics.raghav.verticalhomes.Booking_Dashbook;
+import ics.raghav.verticalhomes.DayBook_Dashboard;
 import ics.raghav.verticalhomes.R;
 import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Site_Supervisor_Dashboard;
+import ics.raghav.verticalhomes.Super_Admin_Dashboard.Super_Admin_HomePage;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -94,24 +99,52 @@ public class Login_Activity extends AppCompatActivity {
             public void onResponse(Call<Login_Responce> call, Response<Login_Responce> response) {
                 progressDialog.dismiss();
 
-                Log.e("Add_new_service" , ""+response.body().getResponce());
-                Toast.makeText(Login_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
+                Log.e("login" , ""+response.body().getResponce());
 
-                user_id=response.body().getData().getId();
 
-                 Intent intent=new Intent(Login_Activity.this, Site_Supervisor_Dashboard.class);
-                 startActivity(intent);
-//                Log.e("Add_service_res_msg" , ""+response.body().getResponce());
-//                Log.e("Add_service_res_suc" , ""+response.isSuccessful());
-//
-//                if (response.isSuccessful()){
-//
-//                    get_services_data.clear();
-//                    service_adapter.notifyDataSetChanged();
-//
-//                    GETAllServiceS();
-//
-//                }
+                if (response.body().getResponce().equals(true)){
+
+                    Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                    Log.e("login_designation_id" , ""+response.body().getData().getId());
+                    Toast.makeText(Login_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
+
+                    user_id=response.body().getData().getId();
+
+                    if (response.body().getData().getDesignationName().equals("admin")){
+                        Intent intent=new Intent(Login_Activity.this, Super_Admin_HomePage.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (response.body().getData().getDesignationName().equals("Site Supervisor")){
+                        Intent intent=new Intent(Login_Activity.this, Site_Supervisor_Dashboard.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (response.body().getData().getDesignationName().equals("Accountant")){
+                        Intent intent=new Intent(Login_Activity.this, Accountant_dashboard.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (response.body().getData().getDesignationName().equals("Day Book")){
+                        Intent intent=new Intent(Login_Activity.this, DayBook_Dashboard.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (response.body().getData().getDesignationName().equals("Booking")){
+                        Intent intent=new Intent(Login_Activity.this, Booking_Dashbook.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (response.body().getData().getDesignationName().equals("Book Payment")){
+                        Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else {
+                    Toast.makeText(Login_Activity.this, "Login Fail", Toast.LENGTH_SHORT).show();
+                }
+
+
 
                 progressDialog.dismiss();
             }

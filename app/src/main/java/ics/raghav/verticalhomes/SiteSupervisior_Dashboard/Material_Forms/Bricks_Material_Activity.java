@@ -1,10 +1,11 @@
-package ics.raghav.verticalhomes.SiteSupervisior_Dashboard;
+package ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Material_Forms;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,34 +18,38 @@ import ics.raghav.verticalhomes.All_Model_Classes.Bricks_Form_Responce;
 import ics.raghav.verticalhomes.ApiAndParameter.Api_parameter;
 import ics.raghav.verticalhomes.ApiAndParameter.BaseUrl;
 import ics.raghav.verticalhomes.R;
+import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Successful_form_Activity;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import android.support.v7.widget.Toolbar;
 
 import static ics.raghav.verticalhomes.LoginAndReg.Login_Activity.user_id;
 
-public class Gitty_Activity extends AppCompatActivity {
-
+public class Bricks_Material_Activity extends AppCompatActivity {
 
     EditText date,inward_time,outward_time,lorry_no,chalan_no,party_name,quantity,amount,rate,gst,gross_amount,
-            reamark,attachment,height,bridth,length;
+            reamark,attachment;
     Button btn_submit;
 
     String Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,Gst,Gross_amount,
-            Reamark,Attachment,Height,Bridth,Length;
-    ProgressDialog progressDialog;
+            Reamark,Attachment;
+     ProgressDialog progressDialog;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gitty_);
+        setContentView(R.layout.activity_bricks__material_);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Gitty Form");
+        getSupportActionBar().setTitle("Bricks Form");
+
 
         date=findViewById(R.id.date);
         inward_time=findViewById(R.id.inward_time);
@@ -56,47 +61,44 @@ public class Gitty_Activity extends AppCompatActivity {
         amount=findViewById(R.id.amount);
         gst=findViewById(R.id.gst);
         rate=findViewById(R.id.rate);
-        gross_amount=findViewById(R.id.gross_amt);
+        gross_amount=findViewById(R.id.gross_amount);
         reamark=findViewById(R.id.reamark);
         attachment=findViewById(R.id.attachment);
-        height=findViewById(R.id.height);
-        bridth=findViewById(R.id.bridth);
-        length=findViewById(R.id.length);
         btn_submit=findViewById(R.id.btn_submit);
+
+
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Date=date.getText().toString();
-                Inward_time=inward_time.getText().toString();
-                Outward_time=outward_time.getText().toString();
-                Lorry_no=lorry_no.getText().toString();
-                Chalan_no=chalan_no.getText().toString();
-                Party_name=party_name.getText().toString();
-                Quantity=quantity.getText().toString();
-                Amount =amount.getText().toString();
-                Rate=rate.getText().toString();
-                Gst=gst.getText().toString();
-                Gross_amount=gross_amount.getText().toString();
-                Reamark=reamark.getText().toString();
-                Attachment=attachment.getText().toString();
-                Height=height.getText().toString();
-                Bridth=bridth.getText().toString();
-                Length=length.getText().toString();
+                         Date=date.getText().toString();
+                         Inward_time=inward_time.getText().toString();
+                         Outward_time=outward_time.getText().toString();
+                         Lorry_no=lorry_no.getText().toString();
+                         Chalan_no=chalan_no.getText().toString();
+                         Party_name=party_name.getText().toString();
+                         Quantity=quantity.getText().toString();
+                         Amount =amount.getText().toString();
+                         Rate=rate.getText().toString();
+                         Gst=gst.getText().toString();
+                         Gross_amount=gross_amount.getText().toString();
+                        Reamark=reamark.getText().toString();
+                         Attachment=attachment.getText().toString();
 
-                Gitty_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
-                        Gst,Gross_amount,Reamark,Attachment,Height,Bridth,Length);
+                         Bricks_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
+                         Gst,Gross_amount,Reamark,Attachment);
 
 
             }
         });
+
     }
 
-    private void Gitty_Form_Submit(String user_id, String date, String inward_time, String outward_time,
-                                   String lorry_no, String chalan_no, String party_name, String quantity,
-                                   String amount, String rate, String gst, String gross_amount, String reamark,
-                                   String attachment, String height, String bridth, String length) {
+    private void Bricks_Form_Submit(String user_id, String date, String inward_time, String outward_time, String lorry_no,
+                                    String chalan_no, String party_name, String quantity, String amount, String rate,
+                                    String gst, String gross_amount, String reamark, String attachment) {
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Your Data");
@@ -111,8 +113,8 @@ public class Gitty_Activity extends AppCompatActivity {
                 .build();
         Api_parameter LoginApi = RetroLogin.create(Api_parameter.class);
 
-        Call<Bricks_Form_Responce> login_Call = LoginApi.Gitty_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
-                ,quantity,amount,rate,gst,gross_amount,reamark,attachment,height,bridth,length);
+        Call<Bricks_Form_Responce> login_Call = LoginApi.Bricks_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
+        ,quantity,amount,rate,gst,gross_amount,reamark,attachment);
 
 
         login_Call.enqueue(new Callback<Bricks_Form_Responce>() {
@@ -122,9 +124,9 @@ public class Gitty_Activity extends AppCompatActivity {
 
                 Log.e("Add_new_service" , ""+response.body().getResponse());
                 Log.e("Add_new_service" , ""+response.body().getMsg());
-                Toast.makeText(Gitty_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Bricks_Material_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Gitty_Activity.this, Successful_form_Activity.class);
+                Intent intent=new Intent(Bricks_Material_Activity.this, Successful_form_Activity.class);
                 startActivity(intent);
                 finish();
 
@@ -151,8 +153,6 @@ public class Gitty_Activity extends AppCompatActivity {
 //                Toast.makeText(Registration_Step_1.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
     }
 }

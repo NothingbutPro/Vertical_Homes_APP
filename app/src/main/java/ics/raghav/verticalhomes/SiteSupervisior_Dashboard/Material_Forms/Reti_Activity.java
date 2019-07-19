@@ -1,4 +1,4 @@
-package ics.raghav.verticalhomes.SiteSupervisior_Dashboard;
+package ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Material_Forms;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import ics.raghav.verticalhomes.All_Model_Classes.Bricks_Form_Responce;
 import ics.raghav.verticalhomes.ApiAndParameter.Api_parameter;
 import ics.raghav.verticalhomes.ApiAndParameter.BaseUrl;
 import ics.raghav.verticalhomes.R;
+import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Successful_form_Activity;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,25 +27,26 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static ics.raghav.verticalhomes.LoginAndReg.Login_Activity.user_id;
 
-public class Electric_finish_Activity extends AppCompatActivity {
+public class Reti_Activity extends AppCompatActivity {
+
 
     EditText date,inward_time,outward_time,lorry_no,chalan_no,party_name,quantity,amount,rate,gst,gross_amount,
-            reamark,attachment,item;
+            reamark,attachment,height,bridth,length;
     Button btn_submit;
 
     String Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,Gst,Gross_amount,
-            Reamark,Attachment,Item;
+            Reamark,Attachment,Height,Bridth,Length;
     ProgressDialog progressDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sanitary_raw);
+        setContentView(R.layout.activity_gitty_);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Electric Finish");
+        getSupportActionBar().setTitle("Reti Form");
 
         date=findViewById(R.id.date);
         inward_time=findViewById(R.id.inward_time);
@@ -56,11 +58,14 @@ public class Electric_finish_Activity extends AppCompatActivity {
         amount=findViewById(R.id.amount);
         gst=findViewById(R.id.gst);
         rate=findViewById(R.id.rate);
-        gross_amount=findViewById(R.id.gross_amount);
+        gross_amount=findViewById(R.id.gross_amt);
         reamark=findViewById(R.id.reamark);
         attachment=findViewById(R.id.attachment);
-        item=findViewById(R.id.item);
+        height=findViewById(R.id.height);
+        bridth=findViewById(R.id.bridth);
+        length=findViewById(R.id.length);
         btn_submit=findViewById(R.id.btn_submit);
+
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,22 +84,23 @@ public class Electric_finish_Activity extends AppCompatActivity {
                 Gross_amount=gross_amount.getText().toString();
                 Reamark=reamark.getText().toString();
                 Attachment=attachment.getText().toString();
-                Item=item.getText().toString();
+                Height=height.getText().toString();
+                Bridth=bridth.getText().toString();
+                Length=length.getText().toString();
 
-
-                Electric_Finish_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
-                        Gst,Gross_amount,Reamark,Attachment,Item);
+                Reti_Form_Submit(user_id,Date,Inward_time,Outward_time,Lorry_no,Chalan_no,Party_name,Quantity,Amount,Rate,
+                        Gst,Gross_amount,Reamark,Attachment,Height,Bridth,Length);
 
 
             }
         });
+
     }
 
-    private void Electric_Finish_Form_Submit(String user_id, String date, String inward_time, String outward_time,
-                                             String lorry_no, String chalan_no, String party_name, String quantity,
-                                             String amount, String rate, String gst, String gross_amount,
-                                             String reamark, String attachment, String item) {
-
+    private void Reti_Form_Submit(String user_id, String date, String inward_time, String outward_time,
+                                  String lorry_no, String chalan_no, String party_name, String quantity,
+                                  String amount, String rate, String gst, String gross_amount, String reamark,
+                                  String attachment, String height, String bridth, String length) {
 
 
         progressDialog = new ProgressDialog(this);
@@ -110,8 +116,8 @@ public class Electric_finish_Activity extends AppCompatActivity {
                 .build();
         Api_parameter LoginApi = RetroLogin.create(Api_parameter.class);
 
-        Call<Bricks_Form_Responce> login_Call = LoginApi.Electric_Finish_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
-                ,quantity,amount,rate,gst,gross_amount,reamark,attachment,item);
+        Call<Bricks_Form_Responce> login_Call = LoginApi.Reti_form_Call_Api(user_id,date,inward_time,outward_time,lorry_no,chalan_no,party_name
+                ,quantity,amount,rate,gst,gross_amount,reamark,attachment,height,bridth,length);
 
 
         login_Call.enqueue(new Callback<Bricks_Form_Responce>() {
@@ -121,9 +127,9 @@ public class Electric_finish_Activity extends AppCompatActivity {
 
                 Log.e("Add_new_service" , ""+response.body().getResponse());
                 Log.e("Add_new_service" , ""+response.body().getMsg());
-                Toast.makeText(Electric_finish_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Reti_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Electric_finish_Activity.this, Successful_form_Activity.class);
+                Intent intent=new Intent(Reti_Activity.this, Successful_form_Activity.class);
                 startActivity(intent);
                 finish();
 
@@ -150,6 +156,7 @@ public class Electric_finish_Activity extends AppCompatActivity {
 //                Toast.makeText(Registration_Step_1.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
     }
