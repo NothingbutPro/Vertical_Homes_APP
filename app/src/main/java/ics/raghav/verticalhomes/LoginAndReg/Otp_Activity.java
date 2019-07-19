@@ -90,8 +90,9 @@ public class Otp_Activity extends AppCompatActivity {
 
                 Toast.makeText(Otp_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(Otp_Activity.this, Site_Supervisor_Dashboard.class);
+                Intent intent=new Intent(Otp_Activity.this, Registration_Pending_Activity.class);
                 startActivity(intent);
+                finish();
 
 //                if (response.body().getResponce().booleanValue() == true) {
 //                   // sessionManager.serverEmailLogin(Integer.valueOf(response.body().getMassage().getId()));

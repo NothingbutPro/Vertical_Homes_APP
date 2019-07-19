@@ -1,4 +1,4 @@
-package ics.raghav.verticalhomes;
+package ics.raghav.verticalhomes.All_Model_Classes;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

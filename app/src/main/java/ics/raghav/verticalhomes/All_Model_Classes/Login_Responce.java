@@ -3,8 +3,6 @@ package ics.raghav.verticalhomes.All_Model_Classes;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import ics.raghav.verticalhomes.Login_Res_Data;
-
 public class Login_Responce {
 
     @SerializedName("data")

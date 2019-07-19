@@ -222,6 +222,7 @@ public class Registration_Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Registration_only> call, Throwable t) {
+                progressDialog.dismiss();
                 Log.e("Failer",""+t.getMessage());
 //                Toast.makeText(getActivity(), "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 //                Toast.makeText(getActivity(), "" + t.getMessage(), Toast.LENGTH_SHORT).show();
