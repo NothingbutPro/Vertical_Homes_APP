@@ -87,8 +87,20 @@ public class Receipts_Activity extends AppCompatActivity {
                 URL url = new URL("https://sdltechserv.in/dgfeb/api/api/buyerragistration");
                 Log.d("string" , ""+otp);
                 JSONObject postDataParams = new JSONObject();
-                postDataParams.put("mobile", mobs);
-                postDataParams.put("pincode", pincode);
+                postDataParams.put("date", date_rep);
+//                postDataParams.put("party_name", topart);
+//                postDataParams.put("project", pro);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("mobile", mobs);
+//                postDataParams.put("pincode", pincode);
                 postDataParams.put("user_type", 1);
 //                postDataParams.put("password", );
 

@@ -12,7 +12,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Receipts.Receipts_Activity"></activity>
+        <activity android:name=".BankPayment"></activity>
+        <activity android:name=".DayBookActivity" />
+        <activity android:name=".Booking_Activity" />
+        <activity android:name=".Receipts.Receipts_Activity" />
         <activity android:name=".SiteSupervisior_Dashboard.Material_Update_List.Material_List_Activity" />
         <activity android:name=".Book_Payment_Dashboard" />
         <activity android:name=".Booking_Dashbook" />

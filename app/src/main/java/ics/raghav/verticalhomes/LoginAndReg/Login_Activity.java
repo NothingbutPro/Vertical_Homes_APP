@@ -146,12 +146,8 @@ public class Login_Activity extends AppCompatActivity {
                         Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
                         startActivity(intent);
                         finish();
-                    } if (response.body().getData().getDesignationName().equals("Receipts_Activity")){
-                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
-                        Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
-                        startActivity(intent);
-                        finish();
                     }
+
                 }else {
                     Toast.makeText(Login_Activity.this, "Login Fail", Toast.LENGTH_SHORT).show();
                 }
