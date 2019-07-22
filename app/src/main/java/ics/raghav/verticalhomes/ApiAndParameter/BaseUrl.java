@@ -18,5 +18,7 @@ public interface BaseUrl {
     String sit_supervisor_electric_raw="sit_supervisor_electric_raw";
     String sit_supervisor_electricfinish="sit_supervisor_electricfinish";
     String sit_supervisor_bricks_list="sit_supervisor_bricks_list";
+    String Bankpayment ="bankpayment";
+  //  String sit_supervisor_bricks_list="sit_supervisor_bricks_list";
 
 }

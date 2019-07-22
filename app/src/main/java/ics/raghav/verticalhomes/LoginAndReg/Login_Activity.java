@@ -109,33 +109,45 @@ public class Login_Activity extends AppCompatActivity {
                     Toast.makeText(Login_Activity.this, "Successful", Toast.LENGTH_SHORT).show();
 
                     user_id=response.body().getData().getId();
+                    String s = response.body().getData().getDesignationName();
 
                     if (response.body().getData().getDesignationName().equals("admin")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, Super_Admin_HomePage.class);
                         startActivity(intent);
                         finish();
                     }
                     if (response.body().getData().getDesignationName().equals("Site Supervisor")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, Site_Supervisor_Dashboard.class);
                         startActivity(intent);
                         finish();
                     }
                     if (response.body().getData().getDesignationName().equals("Accountant")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, Accountant_dashboard.class);
                         startActivity(intent);
                         finish();
                     }
                     if (response.body().getData().getDesignationName().equals("Day Book")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, DayBook_Dashboard.class);
                         startActivity(intent);
                         finish();
                     }
                     if (response.body().getData().getDesignationName().equals("Booking")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, Booking_Dashbook.class);
                         startActivity(intent);
                         finish();
                     }
                     if (response.body().getData().getDesignationName().equals("Book Payment")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
+                        startActivity(intent);
+                        finish();
+                    } if (response.body().getData().getDesignationName().equals("Receipts_Activity")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
                         Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
                         startActivity(intent);
                         finish();

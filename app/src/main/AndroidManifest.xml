@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SiteSupervisior_Dashboard.Material_Update_List.Material_List_Activity"></activity>
+        <activity android:name=".Receipts.Receipts_Activity"></activity>
+        <activity android:name=".SiteSupervisior_Dashboard.Material_Update_List.Material_List_Activity" />
         <activity android:name=".Book_Payment_Dashboard" />
         <activity android:name=".Booking_Dashbook" />
         <activity android:name=".DayBook_Dashboard" />
