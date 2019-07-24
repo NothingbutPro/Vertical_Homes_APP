@@ -11,6 +11,7 @@
         android:logo="@drawable/logo"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
         <activity android:name=".BankPayment"></activity>
         <activity android:name=".DayBookActivity" />
@@ -25,6 +26,7 @@
         <activity
             android:name=".Super_Admin_Dashboard.Super_Admin_HomePage"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".SiteSupervisior_Dashboard.Material_Forms.Electric_finish_Activity" />
         <activity android:name=".SiteSupervisior_Dashboard.Material_Forms.Electric_raw_Activity" />
         <activity android:name=".SiteSupervisior_Dashboard.Material_Forms.Gitty_Activity" />

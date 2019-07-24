@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ics.raghav.verticalhomes.R;
 import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Material_Forms.Bricks_Material_Activity;
@@ -52,6 +53,7 @@ public class Material_Forms_Activity extends AppCompatActivity {
         tv_bricks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Material_Forms_Activity.this, "active +bricks", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Material_Forms_Activity.this, Bricks_Material_Activity.class);
                 startActivity(intent);
             }
