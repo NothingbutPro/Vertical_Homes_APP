@@ -81,6 +81,7 @@ public class Registration_Activity extends AppCompatActivity {
 //                {
 //                    Desti_ID= String.valueOf(spin_designation.getItemIdAtPosition(position));
 //                }else {
+
 //
 //                }
 

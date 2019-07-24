@@ -140,11 +140,13 @@ public class Electric_finish_Activity extends AppCompatActivity {
 //
 //                }
 
-                progressDialog.dismiss();
+//                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<Bricks_Form_Responce> call, Throwable t) {
+                Log.e("failer",""+t.getMessage());
+                progressDialog.dismiss();
 
                 Log.e("failer",""+t.getMessage());
 //                Toast.makeText(Registration_Step_1.this, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();

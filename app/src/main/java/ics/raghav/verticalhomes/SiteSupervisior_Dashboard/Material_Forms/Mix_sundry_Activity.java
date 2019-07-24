@@ -137,13 +137,13 @@ public class Mix_sundry_Activity extends AppCompatActivity {
 //                    GETAllServiceS();
 //
 //                }
-
-                progressDialog.dismiss();
+//
+//                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<Bricks_Form_Responce> call, Throwable t) {
-
+                progressDialog.dismiss();
                 Log.e("failer",""+t.getMessage());
 //                Toast.makeText(Registration_Step_1.this, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 //                Toast.makeText(Registration_Step_1.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
