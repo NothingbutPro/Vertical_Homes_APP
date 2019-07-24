@@ -34,7 +34,6 @@ public interface Api_parameter {
                      @Field("contact") String et_mobile,
                      @Field("password") String et_password,
                      @Field("designation") String desti_id
-
     );
 
     @FormUrlEncoded

@@ -17,10 +17,14 @@ import ics.raghav.verticalhomes.Accountant_dashboard;
 import ics.raghav.verticalhomes.All_Model_Classes.Login_Responce;
 import ics.raghav.verticalhomes.ApiAndParameter.Api_parameter;
 import ics.raghav.verticalhomes.ApiAndParameter.BaseUrl;
+import ics.raghav.verticalhomes.BankPayment;
 import ics.raghav.verticalhomes.Book_Payment_Dashboard;
+import ics.raghav.verticalhomes.Booking_Activity;
 import ics.raghav.verticalhomes.Booking_Dashbook;
+import ics.raghav.verticalhomes.DayBookActivity;
 import ics.raghav.verticalhomes.DayBook_Dashboard;
 import ics.raghav.verticalhomes.R;
+import ics.raghav.verticalhomes.Receipts.Receipts_Activity;
 import ics.raghav.verticalhomes.SiteSupervisior_Dashboard.Site_Supervisor_Dashboard;
 import ics.raghav.verticalhomes.Super_Admin_Dashboard.Super_Admin_HomePage;
 import okhttp3.OkHttpClient;
@@ -102,6 +106,7 @@ public class Login_Activity extends AppCompatActivity {
                 Log.e("login" , ""+response.body().getResponce());
 
 
+
                 if (response.body().getResponce().equals(true)){
 
                     Log.e("login_designation" , ""+response.body().getData().getDesignationName());
@@ -146,8 +151,32 @@ public class Login_Activity extends AppCompatActivity {
                         Intent intent=new Intent(Login_Activity.this, Book_Payment_Dashboard.class);
                         startActivity(intent);
                         finish();
+                    } if (response.body().getData().getDesignationName().equals("Receipts")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, Receipts_Activity.class);
+                        startActivity(intent);
+                        finish();
+                    }if (response.body().getData().getDesignationName().equals("Receipts")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, Receipts_Activity.class);
+                        startActivity(intent);
+                        finish();
+                    }if (response.body().getData().getDesignationName().equals("Bank Payments")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, BankPayment.class);
+                        startActivity(intent);
+                        finish();
+                    }if (response.body().getData().getDesignationName().equals("Day Book")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, DayBookActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }if (response.body().getData().getDesignationName().equals("Booking")){
+                        Log.e("login_designation" , ""+response.body().getData().getDesignationName());
+                        Intent intent=new Intent(Login_Activity.this, Booking_Activity.class);
+                        startActivity(intent);
+                        finish();
                     }
-
                 }else {
                     Toast.makeText(Login_Activity.this, "Login Fail", Toast.LENGTH_SHORT).show();
                 }

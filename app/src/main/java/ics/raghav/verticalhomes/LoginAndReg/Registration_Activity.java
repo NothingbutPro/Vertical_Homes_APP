@@ -77,13 +77,14 @@ public class Registration_Activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 Log.e("desti_size",""+destination_id.size());
-
+                Desti_ID= String.valueOf(spin_designation.getItemIdAtPosition(position));
                 for (int i = 0; i < destination_id.size(); i++)
                 {
                     if (destination_id.get(i).getDesignation().equals
                             (spin_designation.getItemAtPosition(position))){
 
-                        Desti_ID=destination_id.get(i).getId();
+                       // Desti_ID=destination_id.get(i);
+//                        Desti_ID= spin_designation.getItemIdAtPosition(position);
                         Log.e("des_id",""+Desti_ID);
                         // Toast.makeText(AttendenceActivity.this, "sec_Id"+Section_ID, Toast.LENGTH_SHORT).show();
                     }

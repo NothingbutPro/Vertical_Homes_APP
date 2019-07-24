@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,42 +28,52 @@ import javax.net.ssl.HttpsURLConnection;
 import ics.raghav.verticalhomes.R;
 
 public class Receipts_Activity extends AppCompatActivity {
-    EditText rec_o,date_rep,recwith,topart,sumof,cheque,drawnn,dated,amt,block;
+    EditText rec_o,date_rep,recwith,topart,sumof,cheque,drawnn,dated,amt,block,proj,flano;
+    Button btn_submit_rep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipts);
         rec_o = findViewById(R.id.rec_o);
         date_rep = findViewById(R.id.date_rep);
+        proj = findViewById(R.id.proj);
         recwith = findViewById(R.id.recwith);
+        btn_submit_rep = findViewById(R.id.btn_submit_rep);
+        flano = findViewById(R.id.flano);
         topart = findViewById(R.id.topart);
         sumof = findViewById(R.id.sumof);
         cheque = findViewById(R.id.cheque);
         drawnn = findViewById(R.id.drawnn);
-        dated = findViewById(R.id.dated);
+        dated = findViewById(R.id.acc_no_ver);
         amt = findViewById(R.id.amt);
         block = findViewById(R.id.block);
-        if(rec_o.getText().toString().length() !=0 && date_rep.getText().toString().length() !=0 && recwith.getText().toString().length() !=0 &&
-                topart.getText().toString().length() !=0 &&
-                sumof.getText().toString().length() !=0 && cheque.getText().toString().length() !=0 &&
-                drawnn.getText().toString().length() !=0 &&  dated.getText().toString().length() !=0 &&
-                amt.getText().toString().length() !=0 &&  block.getText().toString().length() !=0) {
-            new Receipts_Register(rec_o.getText().toString() ,date_rep.getText().toString(),
-                    recwith.getText().toString(),topart.getText().toString(),sumof.getText().toString(),
-                    cheque.getText().toString(),drawnn.getText().toString(),dated.getText().toString(),
-            amt.getText().toString(),block.getText().toString()).execute();
-        }
+        btn_submit_rep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(rec_o.getText().toString().length() !=0 && date_rep.getText().toString().length() !=0 && recwith.getText().toString().length() !=0 &&
+                        topart.getText().toString().length() !=0 &&
+                        sumof.getText().toString().length() !=0 && cheque.getText().toString().length() !=0 &&
+                        drawnn.getText().toString().length() !=0 &&  dated.getText().toString().length() !=0 &&
+                        amt.getText().toString().length() !=0 &&  block.getText().toString().length() !=0) {
+                    new Receipts_Register(rec_o.getText().toString() ,date_rep.getText().toString(),
+                            recwith.getText().toString(),topart.getText().toString(),sumof.getText().toString(),
+                            cheque.getText().toString(),drawnn.getText().toString(),dated.getText().toString(),
+                            amt.getText().toString(),block.getText().toString(),proj.getText().toString() , flano.getText().toString()).execute();
+                }
+            }
+        });
+
     }
 
     private class Receipts_Register  extends AsyncTask<String, Void, String> {
         ProgressDialog dialog;
         String mobs , pincode,otp;
         int user_type;
-        String rec_o,  date_rep,  recwith,  topart,  sumof,  cheque,  drawnn,  dated,  amt,  block;
+        String rec_o,  date_rep,  recwith,  topart,  sumof,  cheque,  drawnn,  dated,  amt,  block,project,flat_no;
         String toString10;
 
 
-        public Receipts_Register(String rec_o, String date_rep, String recwith, String topart, String sumof, String cheque, String drawnn, String dated, String amt, String block) {
+        public Receipts_Register(String rec_o, String date_rep, String recwith, String topart, String sumof, String cheque, String drawnn, String dated, String amt, String block ,String project,String flat_no) {
             this.rec_o =rec_o;
             this.date_rep = date_rep;
             this.recwith = recwith;
@@ -72,6 +84,8 @@ public class Receipts_Activity extends AppCompatActivity {
             this.dated = dated;
             this.amt = amt;
             this.block = block;
+            this.project = project;
+            this.flat_no = flat_no;
         }
 
         protected void onPreExecute() {
@@ -84,24 +98,20 @@ public class Receipts_Activity extends AppCompatActivity {
 
             try {
 
-                URL url = new URL("https://sdltechserv.in/dgfeb/api/api/buyerragistration");
+                URL url = new URL("http://ihisaab.in/vertical_homes/Api/receipt");
                 Log.d("string" , ""+otp);
                 JSONObject postDataParams = new JSONObject();
                 postDataParams.put("date", date_rep);
-//                postDataParams.put("party_name", topart);
-//                postDataParams.put("project", pro);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("mobile", mobs);
-//                postDataParams.put("pincode", pincode);
-                postDataParams.put("user_type", 1);
+                postDataParams.put("party_name", recwith);
+                postDataParams.put("project", project);
+                postDataParams.put("flat_no", flat_no);
+                postDataParams.put("block", block);
+                postDataParams.put("amount", amt);
+                postDataParams.put("mode", cheque);
+                postDataParams.put("details", sumof);
+                postDataParams.put("user_type", drawnn);
+                postDataParams.put("head", recwith);
+                postDataParams.put("acc_no_verification", dated);
 //                postDataParams.put("password", );
 
 

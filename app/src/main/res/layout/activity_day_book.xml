@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Receipts.Receipts_Activity">
+    tools:context=".DayBookActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -57,7 +57,7 @@
 
 
                     <EditText
-                        android:id="@+id/rec_o"
+                        android:id="@+id/jamamt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -86,7 +86,7 @@
 
 
                     <EditText
-                        android:id="@+id/date_rep"
+                        android:id="@+id/jama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -116,7 +116,7 @@
 
 
                     <EditText
-                        android:id="@+id/recwith"
+                        android:id="@+id/jamhead"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
 
 
                     <EditText
-                        android:id="@+id/topart"
+                        android:id="@+id/khtamt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -175,7 +175,7 @@
 
 
                     <EditText
-                        android:id="@+id/sumof"
+                        android:id="@+id/khtate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -204,7 +204,7 @@
 
 
                     <EditText
-                        android:id="@+id/cheque"
+                        android:id="@+id/khatehea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -216,7 +216,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_submit"
+                    android:id="@+id/btn_submitbook"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Submit"

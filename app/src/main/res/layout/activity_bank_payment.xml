@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Receipts.Receipts_Activity">
+    tools:context=".BankPayment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -57,7 +57,7 @@
 
 
                     <EditText
-                        android:id="@+id/rec_o"
+                        android:id="@+id/date_on_cheque"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -86,7 +86,7 @@
 
 
                     <EditText
-                        android:id="@+id/date_rep"
+                        android:id="@+id/cheque_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -116,7 +116,7 @@
 
 
                     <EditText
-                        android:id="@+id/recwith"
+                        android:id="@+id/particulars"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
 
 
                     <EditText
-                        android:id="@+id/topart"
+                        android:id="@+id/amount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -175,7 +175,7 @@
 
 
                     <EditText
-                        android:id="@+id/sumof"
+                        android:id="@+id/remark"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -204,65 +204,7 @@
 
 
                     <EditText
-                        android:id="@+id/cheque"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cheque Diven Date"
-                        android:textSize="13dp" />
-
-
-                    <EditText
-                        android:id="@+id/dated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Amount"
-                        android:textSize="13dp" />
-
-
-                    <EditText
-                        android:id="@+id/amt"
+                        android:id="@+id/account_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -291,7 +233,7 @@
 
 
                     <EditText
-                        android:id="@+id/block"
+                        android:id="@+id/cheque_given_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -306,8 +248,10 @@
 
 
 
+
+
                 <Button
-                    android:id="@+id/btn_submit"
+                    android:id="@+id/btn_submitbnk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Submit"
