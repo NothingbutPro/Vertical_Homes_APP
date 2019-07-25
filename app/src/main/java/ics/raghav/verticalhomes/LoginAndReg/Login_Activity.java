@@ -136,7 +136,7 @@ public class Login_Activity extends AppCompatActivity {
                     }
                     if (response.body().getData().getDesignationName().equals("Day Book")){
                         Log.e("login_designation" , ""+response.body().getData().getDesignationName());
-                        Intent intent=new Intent(Login_Activity.this, DayBook_Dashboard.class);
+                        Intent intent=new Intent(Login_Activity.this, DayBookActivity.class);
                         startActivity(intent);
                         finish();
                     }

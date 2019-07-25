@@ -31,21 +31,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -63,18 +62,17 @@
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -92,8 +90,7 @@
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
@@ -101,10 +98,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -117,23 +114,22 @@
 
                     <EditText
                         android:id="@+id/jamhead"
-                        android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
-                        android:textColor="@android:color/black"
-                        />
+                        android:inputType="text"
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -151,8 +147,7 @@
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
@@ -160,10 +155,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -181,18 +176,17 @@
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -210,8 +204,7 @@
                         android:layout_marginTop="10dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:textColor="@android:color/black"
-                        />
+                        android:textColor="@android:color/black" />
 
                 </LinearLayout>
 
@@ -219,16 +212,15 @@
                     android:id="@+id/btn_submitbook"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorPrimary"
                     android:text="Submit"
                     android:textColor="@color/colorWhhite"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorPrimary"
 
                     />
-
 
 
             </LinearLayout>

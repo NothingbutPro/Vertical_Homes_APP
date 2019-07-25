@@ -3,28 +3,30 @@ package ics.raghav.verticalhomes.All_Model_Classes;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Bricks_Form_Responce {
 
-    @SerializedName("response")
+    @SerializedName("data")
     @Expose
-    private Boolean response;
-    @SerializedName("msg")
+    private List<Bricks_Form_Responce_data> data = null;
+    @SerializedName("responce")
     @Expose
-    private String msg;
+    private Boolean responce;
 
-    public Boolean getResponse() {
-        return response;
+    public List<Bricks_Form_Responce_data> getData() {
+        return data;
     }
 
-    public void setResponse(Boolean response) {
-        this.response = response;
+    public void setData(List<Bricks_Form_Responce_data> data) {
+        this.data = data;
     }
 
-    public String getMsg() {
-        return msg;
+    public Boolean getResponce() {
+        return responce;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setResponce(Boolean responce) {
+        this.responce = responce;
     }
 }

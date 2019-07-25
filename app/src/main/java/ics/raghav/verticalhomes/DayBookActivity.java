@@ -27,8 +27,9 @@ import javax.net.ssl.HttpsURLConnection;
 import ics.raghav.verticalhomes.Receipts.Receipts_Activity;
 
 public class DayBookActivity extends AppCompatActivity {
-EditText jamamt,jama,jamhead,khtamt,khtate,khatehea;
-Button btn_submitbook;
+    EditText jamamt, jama, jamhead, khtamt, khtate, khatehea;
+    Button btn_submitbook;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +45,11 @@ Button btn_submitbook;
         btn_submitbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(jamamt.getText().toString().length() !=0 && jama.getText().toString().length() !=0 && jamhead.getText().toString().length() !=0
-                        &&khtamt.getText().toString().length() !=0 && khtate.getText().toString().length() !=0 && khatehea.getText().toString().length() !=0)
-                {
-                    new Daybooklogin(jamamt.getText().toString() , jama.getText().toString(),  jamhead.getText().toString()
-                            ,khtamt.getText().toString() , khtate.getText().toString(), khatehea.getText().toString()).execute();
-                }else {
+                if (jamamt.getText().toString().length() != 0 && jama.getText().toString().length() != 0 && jamhead.getText().toString().length() != 0
+                        && khtamt.getText().toString().length() != 0 && khtate.getText().toString().length() != 0 && khatehea.getText().toString().length() != 0) {
+                    new Daybooklogin(jamamt.getText().toString(), jama.getText().toString(), jamhead.getText().toString()
+                            , khtamt.getText().toString(), khtate.getText().toString(), khatehea.getText().toString()).execute();
+                } else {
                     Toast.makeText(DayBookActivity.this, "please fill every field", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -58,18 +58,16 @@ Button btn_submitbook;
     }
 
 
-  public class Daybooklogin  extends AsyncTask<String, Void, String>
-
-    {
+    public class Daybooklogin extends AsyncTask<String, Void, String> {
         ProgressDialog dialog;
-        String mobs , pincode,otp;
+        String mobs, pincode, otp;
         int user_type;
-        String jamamt,  jama,  jamhead,  khtamt,  khtate,  khatehea,  drawnn,  dated,  amt,  block,project,flat_no;
+        String jamamt, jama, jamhead, khtamt, khtate, khatehea, drawnn, dated, amt, block, project, flat_no;
         String toString10;
 
         public Daybooklogin(String jamamt, String jama, String jamhead, String khtamt, String khtate, String khatehea) {
 
-            this.jamamt =jamamt;
+            this.jamamt = jamamt;
             this.jama = jama;
             this.jama = jama;
             this.jamhead = jamhead;
@@ -82,89 +80,88 @@ Button btn_submitbook;
 
 
         protected void onPreExecute() {
-        dialog = new ProgressDialog(DayBookActivity.this);
-        dialog.show();
+            dialog = new ProgressDialog(DayBookActivity.this);
+            dialog.show();
 
-    }
+        }
 
         protected String doInBackground(String... arg0) {
 
-        try {
+            try {
 
-            URL url = new URL("http://ihisaab.in/vertical_homes/Api/daybook");
-            Log.d("string" , ""+otp);
-            JSONObject postDataParams = new JSONObject();
-            postDataParams.put("jama_amount", jamamt);
-            postDataParams.put("jama", jama);
-            postDataParams.put("jama_head", jamhead);
-            postDataParams.put("khate_amount", khtamt);
-            postDataParams.put("khate", khtate);
-            postDataParams.put("khate_head", khatehea);
+                URL url = new URL("http://ihisaab.in/vertical_homes/Api/daybook");
+                Log.d("string", "" + otp);
+                JSONObject postDataParams = new JSONObject();
+                postDataParams.put("jama_amount", jamamt);
+                postDataParams.put("jama", jama);
+                postDataParams.put("jama_head", jamhead);
+                postDataParams.put("khate_amount", khtamt);
+                postDataParams.put("khate", khtate);
+                postDataParams.put("khate_head", khatehea);
 //                postDataParams.put("password", );
 
 
-            Log.e("postDataParams", postDataParams.toString());
+                Log.e("postDataParams", postDataParams.toString());
 
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(15000  /*milliseconds*/);
-            conn.setConnectTimeout(15000  /*milliseconds*/);
-            conn.setRequestMethod("POST");
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000  /*milliseconds*/);
+                conn.setConnectTimeout(15000  /*milliseconds*/);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
 
-            OutputStream os = conn.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(os, "UTF-8"));
-            writer.write(getPostDataString(postDataParams));
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(getPostDataString(postDataParams));
 
-            writer.flush();
-            writer.close();
-            os.close();
+                writer.flush();
+                writer.close();
+                os.close();
 
-            int responseCode = conn.getResponseCode();
+                int responseCode = conn.getResponseCode();
 
-            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
 
-                BufferedReader in = new BufferedReader(new
-                        InputStreamReader(
-                        conn.getInputStream()));
+                    BufferedReader in = new BufferedReader(new
+                            InputStreamReader(
+                            conn.getInputStream()));
 
-                StringBuffer sb = new StringBuffer("");
-                String line = "";
+                    StringBuffer sb = new StringBuffer("");
+                    String line = "";
 
-                while ((line = in.readLine()) != null) {
+                    while ((line = in.readLine()) != null) {
 
-                    StringBuffer Ss = sb.append(line);
-                    Log.e("Ss", Ss.toString());
-                    sb.append(line);
-                    break;
+                        StringBuffer Ss = sb.append(line);
+                        Log.e("Ss", Ss.toString());
+                        sb.append(line);
+                        break;
+                    }
+
+                    in.close();
+                    return sb.toString();
+
+                } else {
+                    return new String("false : " + responseCode);
                 }
-
-                in.close();
-                return sb.toString();
-
-            } else {
-                return new String("false : " + responseCode);
+            } catch (Exception e) {
+                return new String("Exception: " + e.getMessage());
             }
-        } catch (Exception e) {
-            return new String("Exception: " + e.getMessage());
-        }
 
-    }
+        }
 
         @Override
         protected void onPostExecute(String result) {
-        if (result != null) {
-            dialog.dismiss();
+            if (result != null) {
+                dialog.dismiss();
 
-            JSONObject jsonObject = null;
-            Log.e("PostRegistration", result.toString());
-            try {
+                JSONObject jsonObject = null;
+                Log.e("PostRegistration", result.toString());
+                try {
 
-                jsonObject = new JSONObject(result);
-                Boolean response = jsonObject.getBoolean("responce");
-                if(response.booleanValue() !=false)
-                {
+                    jsonObject = new JSONObject(result);
+                    Boolean response = jsonObject.getBoolean("responce");
+                    if (response.booleanValue() != false) {
 //                        Intent intent = new Intent(OtpActivity.this , Buyer_Main_Navigation.class);
 //                        startActivity(intent);
 //                        Toast.makeText(OtpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
@@ -172,43 +169,42 @@ Button btn_submitbook;
 ////                        String otp = massage.substring(29);
 ////                        Log.d("otp is" , ""+otp);
 ////                        txtmobile.setText(otp);
-                }else {
-                    //Toast.makeText(OtpActivity.this, "OTP Could not be sent", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //Toast.makeText(OtpActivity.this, "OTP Could not be sent", Toast.LENGTH_SHORT).show();
 //                        overridePendingTransition(R.anim.anim_slide_in_left,
 //                                R.anim.anim_slide_out_left);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            }catch (Exception e)
-            {
-                e.printStackTrace();
-            }
 
+            }
         }
-    }
 
         public String getPostDataString(JSONObject params) throws Exception {
 
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
+            StringBuilder result = new StringBuilder();
+            boolean first = true;
 
-        Iterator<String> itr = params.keys();
+            Iterator<String> itr = params.keys();
 
-        while (itr.hasNext()) {
+            while (itr.hasNext()) {
 
-            String key = itr.next();
-            Object value = params.get(key);
+                String key = itr.next();
+                Object value = params.get(key);
 
-            if (first)
-                first = false;
-            else
-                result.append("&");
+                if (first)
+                    first = false;
+                else
+                    result.append("&");
 
-            result.append(URLEncoder.encode(key, "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(value.toString(), "UTF-8"));
+                result.append(URLEncoder.encode(key, "UTF-8"));
+                result.append("=");
+                result.append(URLEncoder.encode(value.toString(), "UTF-8"));
 
+            }
+            return result.toString();
         }
-        return result.toString();
-    }
     }
 
 }
